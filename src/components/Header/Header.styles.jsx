@@ -49,8 +49,30 @@ export const ToggleButton = styled.button`
 	cursor: pointer;
 	transition: 0.1s ease-in-out;
 	opacity: 0.85;
-
 	border-radius: 50%;
+
+	&::after {
+		content: attr(aria-label);
+		background: ${({ theme }) => theme['text-primary']};
+		color: ${({ theme }) => theme['bg-primary']};
+		position: absolute;
+		top: 10px;
+		left: -80px;
+		transform: scale(0);
+		opacity: 0;
+		white-space: nowrap;
+		border-radius: 6px;
+		transition: 0.3s ease;
+		padding: 0.5rem 1rem;
+	}
+
+	&:hover {
+		&::after {
+			left: -160px;
+			opacity: 0.8;
+			transform: scale(1);
+		}
+	}
 
 	&:hover,
 	&:focus {

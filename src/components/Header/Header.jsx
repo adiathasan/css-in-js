@@ -9,6 +9,8 @@ import {
 } from './Header.styles';
 import { scrollTop } from '../Global/helper';
 
+const inverseTheme = (theme) => (theme === 'light' ? 'dark' : 'light');
+
 const Header = ({ toggle, theme }) => {
 	return (
 		<HeaderStyled>
@@ -18,7 +20,7 @@ const Header = ({ toggle, theme }) => {
 			<ToggleButton
 				onClick={toggle}
 				id='theme-toggle'
-				aria-label='Switch to dark theme'>
+				aria-label={`Switch to ${inverseTheme(theme)} theme`}>
 				<SvgToggleDark
 					xmlns='http://www.w3.org/2000/svg'
 					viewBox='0 0 472.39 472.39'>
