@@ -24,7 +24,7 @@ export const NavItem = styled.div`
 		height: 2px;
 		width: 0;
 		opacity: 0;
-		transition: 0.3s ease-in-out;
+		transition: 0.3s ease;
 		background: ${({ theme }) => theme['text-primary']};
 	}
 
@@ -47,7 +47,7 @@ export const ToggleButton = styled.button`
 	height: 50px;
 	width: 50px;
 	cursor: pointer;
-	transition: 0.1s ease-in-out;
+	transition: 0.1s ease-out;
 	opacity: 0.85;
 	border-radius: 50%;
 
@@ -60,7 +60,7 @@ export const ToggleButton = styled.button`
 		left: -80px;
 		transform: scale(0);
 		opacity: 0;
-		white-space: nowrap;
+		width: max-content;
 		border-radius: 6px;
 		transition: 0.3s ease;
 		padding: 0.5rem 1rem;
@@ -87,9 +87,16 @@ export const SvgToggleDark = styled.svg`
 
 	.sun,
 	.circle {
+		fill: ${({ theme }) => theme['text-primary']};
+	}
+
+	.sun {
 		transform-origin: center center;
 		transition: transform 750ms cubic-bezier(0.11, 0.14, 0.29, 1.32);
-		fill: ${({ theme }) => theme['text-primary']};
+	}
+
+	.circle {
+		transition: 0.25s ease-out;
 	}
 
 	.sun.dark {
@@ -97,6 +104,6 @@ export const SvgToggleDark = styled.svg`
 	}
 
 	.circle.dark {
-		transform: translateX(-70px);
+		transform: translateX(-80px);
 	}
 `;
