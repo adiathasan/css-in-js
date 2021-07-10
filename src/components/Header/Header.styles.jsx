@@ -50,6 +50,7 @@ export const ToggleButton = styled.button`
 	transition: 0.1s ease-out;
 	opacity: 0.85;
 	border-radius: 50%;
+	outline: none;
 
 	&::after {
 		content: attr(aria-label);
